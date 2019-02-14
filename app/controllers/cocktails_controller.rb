@@ -1,0 +1,31 @@
+class CocktailsController < ApplicationController
+
+  def index
+    @cocktails = Cocktail.all
+  end
+
+  def show
+    @cocktail = Cocktail.find(params[:id])
+    @ingredients = Ingredient.where(cocktail_id: @cocktail_id)
+    # @dose = Dose.where(dose.cocktail_id: @dose.cocktail.id)
+  end
+
+  def new
+    @cocktail = Cocktail.new
+  end
+
+  def create
+    @cocktail = Cocktail.new(cocktail_params)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def cocktail_params
+    params.require(:cocktail).permit(:name, :ingredients, :doses)
+  end
+end
