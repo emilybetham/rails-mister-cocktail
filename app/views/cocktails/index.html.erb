@@ -11,22 +11,26 @@
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.ecosia.org/guOPuJrLVlNnm8UFhPhnbyGNuws=/0x390/smart/https%3A%2F%2Fwww.thespruceeats.com%2Fthmb%2FVdVFs-62QBYWppoUwTdtK8rtw-0%3D%2F3849x2524%2Ffilters%3Ano_upscale%28%29%3Amax_bytes%28150000%29%3Astrip_icc%28%29%2Fvodka-martini-recipe-760983-8-5b48ffe1c9e77c001a664f6e.jpg');">
-          <div class="card-description">
-            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <% if cocktail.photo.present? %>
+          <div class="col-sm-4">
+            <div class="card"
+              style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo%>');">>
+              <div class="card-description">
+                <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    <% end %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 
 
-
+<!-- ADD AN IF cocktail.photo.present? ELSE for the photos
+OR DELETE ALL EXISTING ONES -->
 
 
 
