@@ -10,3 +10,5 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();

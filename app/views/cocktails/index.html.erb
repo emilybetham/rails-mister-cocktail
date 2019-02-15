@@ -1,10 +1,34 @@
-<h1>Cocktails</h1>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-   <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,30,0.6) 60%), url('https://images.ecosia.org/6l-5bZGUPskI1hODTnbS6YnbboM=/0x390/smart/http%3A%2F%2Fgalumbi.de%2Fwp-content%2Fuploads%2F2015%2F06%2FBlue-Moon-Cocktail-1-von-1-2.jpg');">
+  <div class="banner-content">
+    <h1>Create your Cocktail</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+    <h2><%=  link_to 'click & create', new_cocktail_path, class: 'btn  btn-lg' %>
+    </h2>
+  </div>
+</div>
 
 
-<%=  link_to 'Add new cocktail', new_cocktail_path %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.ecosia.org/guOPuJrLVlNnm8UFhPhnbyGNuws=/0x390/smart/https%3A%2F%2Fwww.thespruceeats.com%2Fthmb%2FVdVFs-62QBYWppoUwTdtK8rtw-0%3D%2F3849x2524%2Ffilters%3Ano_upscale%28%29%3Amax_bytes%28150000%29%3Astrip_icc%28%29%2Fvodka-martini-recipe-760983-8-5b48ffe1c9e77c001a664f6e.jpg');">
+          <div class="card-description">
+            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
