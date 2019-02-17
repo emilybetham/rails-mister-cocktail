@@ -11,26 +11,49 @@
 </div>
 
 
-  <div class="container">
+  ç<div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
         <% if cocktail.photo.present? %>
           <div class="col-sm-4">
             <div class="card"
               style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo%>');">>
+              <div class="card-category">Favourite</div>
               <div class="card-description">
                 <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
               </div>
             </div>
           </div>
+          <% else %>
+            <div class="col-sm-4">
+              <div class="card"
+                style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.ecosia.org/D_H5SRO0Ftsa16k9jSZHo6fJcbE=/0x390/smart/http%3A%2F%2Fcdn.liquor.com%2Fwp-content%2Fuploads%2F2016%2F11%2F16132015%2Fmargarita-rocks-salt-1200FB.jpg');">>
+                <div class="card-category">Favourite</div>
+                <div class="card-description">
+                  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+                </div>
+              </div>
+            </div>
         <% end %>
       <% end %>
     </div>
   </div>
 
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+    </div>
+  </div>
 
-<!-- ADD AN IF cocktail.photo.present? ELSE for the photos
-OR DELETE ALL EXISTING ONES -->
+
+
 
 
 

@@ -1,13 +1,29 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,30,0.6) 60%), url('https://images.ecosia.org/6l-5bZGUPskI1hODTnbS6YnbboM=/0x390/smart/http%3A%2F%2Fgalumbi.de%2Fwp-content%2Fuploads%2F2015%2F06%2FBlue-Moon-Cocktail-1-von-1-2.jpg');">
+  <div class="banner-content">
+    <h1>Create a new Cocktail here</h1>
+    <p>
+      <span id="banner-typed-text"></span>
+    </p>
+  </div>
+</div>
+
+
+
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Create a new cocktail</h1>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 form">
       <%= simple_form_for @cocktail do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <div class="input">
+          <%= f.input :name %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.submit class: 'btn btn-primary' %>
+          <%= link_to "Back", cocktails_path, id: 'back_button' %>
+        </div>
       <% end %>
+      <br>
     </div>
   </div>
 </div>
+
+

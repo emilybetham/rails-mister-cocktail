@@ -1,0 +1,13 @@
+.form {
+  position: relative;
+  padding: 50px;
+  #back_button {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+  }
+}
+
+.form .input {
+  font-size: 20px;
+}
